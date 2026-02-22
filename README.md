@@ -74,7 +74,7 @@ LLM-based Insight Generator
 
 ## 📂 Repository Structure
 
-
+```bash
 MINDTRACE-AI/
 │
 ├── backend/
@@ -117,7 +117,7 @@ MINDTRACE-AI/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-
+```
 
 
 ---
@@ -142,23 +142,22 @@ Create your own environment variables when running locally or deploying:
 
 ```bash
 HF_TOKEN=your_huggingface_token
-
+```
 
 ## ▶️ Running Locally
 
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ### Start backend
 ```bash
 uvicorn backend.api:app --reload
-
+```
 ### Start Frontend
 ```bash
 streamlit run frontend/app.py
-
----
+```
 ---
 ## 🌐 Deployment
 The project is designed to be deployed on Hugging Face Spaces using:
@@ -169,15 +168,12 @@ Models are pulled directly from Hugging Face during runtime.
 
 ---
 
-
----
 ## ⚠️ Disclaimer
 MindTrace-AI is an experimental AI system for educational and awareness purposes only.
 It is not a medical or diagnostic tool and should not replace professional mental-health support.
 
 ---
 
----
 ## 📌 Future Enhancements
 - Multi-language journaling support
 - Personalized trend baselines
@@ -193,6 +189,7 @@ This project is released for educational and research purposes.
 ## 🙌 Final Note
 MindTrace-AI demonstrates how explainable AI, NLP, and interactive visualization can be combined to create meaningful mental-state awareness tools.
 ----
+
 
 
 
