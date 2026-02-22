@@ -1,0 +1,186 @@
+[
+    {
+        "session_name": "Example",
+        "journal_entries": [
+            {
+                "date": "2026-02-21",
+                "text": "I was extremely happy today! Everything felt perfect"
+            },
+            {
+                "date": "2026-02-22",
+                "text": "Suddenly I felt anxious and unsure about everything."
+            },
+            {
+                "date": "2026-02-23",
+                "text": "I felt proud and confident about my progress"
+            },
+            {
+                "date": "2026-02-24",
+                "text": "I got irritated over small things and felt annoyed."
+            },
+            {
+                "date": "2026-02-25",
+                "text": "I feel hopeful and optimistic again."
+            }
+        ],
+        "analysis": {
+            "risk_score": 4.05,
+            "risk_breakdown": {
+                "Declining Trend": 0.0,
+                "Emotional Volatility": 2.03,
+                "Behavioral Drift": 2.01
+            },
+            "risk_level": "Low",
+            "pattern_type": "alternating_pattern",
+            "trajectory_type": "stable",
+            "sentiment_momentum": 0.0,
+            "emotional_volatility": 0.050830408972635355,
+            "behavioral_drift": 0.050340922229807294,
+            "longest_negative_streak": 1,
+            "current_negative_streak": 0,
+            "structured_insight": {
+                "summary": "The overall emotional trajectory appears stable.",
+                "behavior": "The observed emotional pattern is classified as alternating_pattern.",
+                "recommendation": "Continued reflective journaling and consistent monitoring are recommended."
+            },
+            "raw_results": [
+                {
+                    "date": "2026-02-21",
+                    "sentiment": "positive",
+                    "sentiment_score": 1,
+                    "emotion_scores": [
+                        [
+                            "joy",
+                            0.7254863977432251
+                        ],
+                        [
+                            "gratitude",
+                            0.1545637995004654
+                        ],
+                        [
+                            "admiration",
+                            0.05840462073683739
+                        ],
+                        [
+                            "caring",
+                            0.0569579042494297
+                        ],
+                        [
+                            "optimism",
+                            0.0402119942009449
+                        ]
+                    ]
+                },
+                {
+                    "date": "2026-02-22",
+                    "sentiment": "negative",
+                    "sentiment_score": -1,
+                    "emotion_scores": [
+                        [
+                            "fear",
+                            0.5219219326972961
+                        ],
+                        [
+                            "nervousness",
+                            0.15454626083374023
+                        ],
+                        [
+                            "neutral",
+                            0.09840480238199234
+                        ],
+                        [
+                            "realization",
+                            0.09136434644460678
+                        ],
+                        [
+                            "sadness",
+                            0.06078755855560303
+                        ]
+                    ]
+                },
+                {
+                    "date": "2026-02-23",
+                    "sentiment": "positive",
+                    "sentiment_score": 1,
+                    "emotion_scores": [
+                        [
+                            "admiration",
+                            0.5821196436882019
+                        ],
+                        [
+                            "gratitude",
+                            0.10767284780740738
+                        ],
+                        [
+                            "optimism",
+                            0.0808434933423996
+                        ],
+                        [
+                            "caring",
+                            0.06836249679327011
+                        ],
+                        [
+                            "approval",
+                            0.06435639411211014
+                        ]
+                    ]
+                },
+                {
+                    "date": "2026-02-24",
+                    "sentiment": "negative",
+                    "sentiment_score": -1,
+                    "emotion_scores": [
+                        [
+                            "anger",
+                            0.5695844292640686
+                        ],
+                        [
+                            "annoyance",
+                            0.4103831648826599
+                        ],
+                        [
+                            "neutral",
+                            0.0895252376794815
+                        ],
+                        [
+                            "disapproval",
+                            0.06752121448516846
+                        ],
+                        [
+                            "disappointment",
+                            0.043667022138834
+                        ]
+                    ]
+                },
+                {
+                    "date": "2026-02-25",
+                    "sentiment": "positive",
+                    "sentiment_score": 1,
+                    "emotion_scores": [
+                        [
+                            "optimism",
+                            0.7753227949142456
+                        ],
+                        [
+                            "caring",
+                            0.16374601423740387
+                        ],
+                        [
+                            "neutral",
+                            0.050122927874326706
+                        ],
+                        [
+                            "approval",
+                            0.03679332882165909
+                        ],
+                        [
+                            "desire",
+                            0.03171905502676964
+                        ]
+                    ]
+                }
+            ]
+        },
+        "llm_report": "**Mental-State Awareness Report**\n\n**Emotional State Overview**\n\nHello, I'm here to support you through this report. Currently, your emotional state appears to be stable. This is a positive sign, indicating that you're navigating life's challenges with a sense of balance and equilibrium. It's essential to acknowledge and appreciate this stability, as it can serve as a foundation for continued growth and well-being.\n\n**Risk Interpretation**\n\nGiven the low risk level associated with your current emotional trajectory, you can feel confident that you're on a stable path. This doesn't mean that challenges won't arise in the future, but for now, you're well-equipped to handle them. It's essential to remain vigilant and continue monitoring your emotional state to ensure that you're always aware of your mental well-being.\n\n**Behavioral Pattern Analysis**\n\nYour emotional pattern is classified as an alternating_pattern. This means that you may experience fluctuations in your emotions, but these shifts are likely to be manageable and not overly intense. This pattern can be a sign of emotional adaptability and resilience, allowing you to navigate different situations with ease.\n\n**Emotional Resilience Perspective**\n\nYour ability to maintain a stable emotional state, despite potential fluctuations, is a testament to your emotional resilience. This resilience is a valuable asset, enabling you to cope with life's challenges and bounce back from setbacks. It's essential to continue nurturing this resilience by engaging in activities that promote emotional well-being, such as self-care, mindfulness, and social connections.\n\n**Reflection & Growth Recommendations**\n\nTo continue growing and developing emotionally, I recommend that you maintain a consistent reflective journaling practice. This will help you better understand your thoughts, emotions, and behaviors, allowing you to make informed decisions and develop strategies for maintaining emotional balance. Additionally, continued monitoring of your emotional state will ensure that you remain aware of any potential shifts or challenges.\n\n**Ongoing Awareness Guidance**\n\nAs your trusted companion, I'll be here to support you in your emotional journey. Remember to stay attuned to your emotional state, and don't hesitate to reach out if you need guidance or simply someone to talk to. By working together, we can continue to foster a deeper understanding of your emotional well-being and promote a path of growth, resilience, and overall mental well-being."
+    }
+]

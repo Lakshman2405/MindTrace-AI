@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+.env
+*.safetensors
+models/
+.ipynb_checkpoints/
