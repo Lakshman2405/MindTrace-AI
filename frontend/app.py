@@ -18,14 +18,16 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import HRFlowable
 from io import BytesIO
+from backend.api import analyze_journal_entries
 
 # =========================================================
 # CONFIG
 # =========================================================
 st.set_page_config(page_title="MindTrace AI", page_icon="🧠", layout="wide")
 
-API_URL = "http://localhost:8000/analyze"
+# API_URL = "http://localhost:8000/analyze"
 HISTORY_FILE = "analysis_history.json"
+
 
 # =========================================================
 # PERSISTENCE
@@ -266,9 +268,8 @@ if st.button("🔍 Analyze Mental State", use_container_width=True):
     else:
         try:
             with st.spinner("🧠 Analyzing mental state..."):
-                response = requests.post(
-                    API_URL,
-                    json={"journal_entries": st.session_state.journal_entries}
+                response = analyze_journal_entries(
+                    st.session_state.journal_entries
                 )
                 result = response.json()
 
