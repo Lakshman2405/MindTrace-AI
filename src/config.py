@@ -9,8 +9,8 @@ load_dotenv()
 # MODEL PATHS
 # =========================
 
-EMOTION_MODEL_PATH = "https://huggingface.co/CoderLakshman/mindtrace-emotion-model"
-SENTIMENT_MODEL_PATH = "https://huggingface.co/CoderLakshman/mindtrace-sentiment-model"
+EMOTION_MODEL_PATH = "CoderLakshman/mindtrace-emotion-model"
+SENTIMENT_MODEL_PATH = "CoderLakshman/mindtrace-sentiment-model"
 
 # =========================
 # THRESHOLDS
