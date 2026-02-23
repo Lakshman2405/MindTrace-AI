@@ -20,15 +20,14 @@ from reportlab.platypus import HRFlowable
 from io import BytesIO
 import sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
-from backend.api import analyze_journal_entries
+
 
 # =========================================================
 # CONFIG
 # =========================================================
 st.set_page_config(page_title="MindTrace AI", page_icon="🧠", layout="wide")
 
-# API_URL = "http://localhost:8000/analyze"
+API_URL =os.getenv("API_URL","http://localhost:8000/analyze")
 HISTORY_FILE = "analysis_history.json"
 
 
@@ -271,8 +270,9 @@ if st.button("🔍 Analyze Mental State", use_container_width=True):
     else:
         try:
             with st.spinner("🧠 Analyzing mental state..."):
-                response = analyze_journal_entries(
-                    st.session_state.journal_entries
+                response = requests.post(
+                    API_URL,
+                    json={"journal_entries": st.session_state.journal_entries}
                 )
                 result = response.json()
 
