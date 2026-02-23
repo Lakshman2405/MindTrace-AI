@@ -18,6 +18,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import HRFlowable
 from io import BytesIO
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 from backend.api import analyze_journal_entries
 
 # =========================================================
