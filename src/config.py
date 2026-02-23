@@ -29,3 +29,4 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # =========================
 
 HF_TOKEN = os.getenv("HF_TOKEN")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KRY")
