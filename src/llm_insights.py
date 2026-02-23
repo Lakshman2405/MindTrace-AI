@@ -2,7 +2,7 @@ import requests
 from src.config import HF_TOKEN
 
 
-HF_ROUTER_URL = "https://router.huggingface.co/v1/chat/completions"
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
 
 
@@ -71,7 +71,7 @@ def generate_llm_report(analysis_output):
         "max_tokens": 700
     }
 
-    response = requests.post(HF_ROUTER_URL, headers=headers, json=payload)
+    response = requests.post(OPENROUTER_URL, headers=headers, json=payload)
 
     if response.status_code != 200:
         return {"error": response.text}
