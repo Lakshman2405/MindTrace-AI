@@ -272,11 +272,31 @@ if st.button("🔍 Analyze Mental State", use_container_width=True):
     else:
         try:
             with st.spinner("🧠 Analyzing mental state..."):
-                response = requests.post(
-                    API_URL,
-                    json={"journal_entries": st.session_state.journal_entries}
-                )
-                result = response.json()
+
+                # ===============================
+                # MODE 1: LOCAL (FASTAPI BACKEND)
+                # ===============================
+                if USE_BACKEND:
+                    response = requests.post(
+                        API_URL,
+                        json={"journal_entries": st.session_state.journal_entries}
+                    )
+                    result = response.json()
+
+                # ===============================
+                # MODE 2: CLOUD (DIRECT EXECUTION)
+                # ===============================
+                else:
+                    analysis_output = analyze_journal_entries(
+                        st.session_state.journal_entries
+                    )
+
+                    llm_report = generate_llm_report(analysis_output)
+
+                    result = {
+                        "analysis": analysis_output,
+                        "llm_report": llm_report
+                    }
 
             session_record = {
                 "session_name": f"Session {len(st.session_state.analysis_history)+1}",
@@ -291,8 +311,9 @@ if st.button("🔍 Analyze Mental State", use_container_width=True):
 
             st.success("Analysis Completed")
 
-        except:
-            st.error("Backend not reachable.")
+        except Exception as e:
+            st.error("Analysis failed.")
+            st.exception(e)
 
 # =========================================================
 # SESSION HISTORY
