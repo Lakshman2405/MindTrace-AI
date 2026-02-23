@@ -19,7 +19,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import HRFlowable
 from io import BytesIO
 import sys
-
+from src.pattern_analysis import analyze_journal_entries
+from src.llm_insights import generate_llm_report
 
 
 # =========================================================
@@ -27,7 +28,8 @@ import sys
 # =========================================================
 st.set_page_config(page_title="MindTrace AI", page_icon="🧠", layout="wide")
 
-API_URL =os.getenv("API_URL","http://localhost:8000/analyze")
+API_URL =os.getenv("API_URL")
+USE_BACKEND = API_URL is not None
 HISTORY_FILE = "analysis_history.json"
 
 
