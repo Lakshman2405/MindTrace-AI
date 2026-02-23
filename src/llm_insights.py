@@ -1,6 +1,6 @@
 import requests
 from src.config import HF_TOKEN
-
+from src.config import OPENROUTER_API
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_NAME = "meta-llama/Meta-Llama-3-8B-Instruct"
@@ -51,13 +51,13 @@ Ongoing Awareness Guidance
 
 def generate_llm_report(analysis_output):
 
-    if not HF_TOKEN:
-        return {"error": "HF_TOKEN not found."}
+    if not OPENROUTER_API:
+        return {"error": "OPENROUTER_API not found."}
 
     prompt = build_llm_prompt(analysis_output)
 
     headers = {
-        "Authorization": f"Bearer {HF_TOKEN}",
+        "Authorization": f"Bearer {OPENROUTER_API}",
         "Content-Type": "application/json"
     }
 
