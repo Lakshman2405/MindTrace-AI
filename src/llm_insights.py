@@ -48,16 +48,16 @@ Reflection & Growth Recommendations
 Ongoing Awareness Guidance
 """
 
-
 def generate_llm_report(analysis_output):
 
+    # Always return a STRING. Never return dict.
     if not OPENROUTER_API_KEY:
-        return {"error": "OPENROUTER_API_KEY not found."}
+        return "LLM report unavailable: OPENROUTER_API_KEY not configured."
 
     prompt = build_llm_prompt(analysis_output)
 
     headers = {
-        "Authorization": f"Bearer {OPENROUTER_API}",
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json"
     }
 
@@ -71,10 +71,24 @@ def generate_llm_report(analysis_output):
         "max_tokens": 700
     }
 
-    response = requests.post(OPENROUTER_URL, headers=headers, json=payload)
+    try:
+        response = requests.post(
+            OPENROUTER_URL,
+            headers=headers,
+            json=payload,
+            timeout=60
+        )
 
-    if response.status_code != 200:
-        return {"error": response.text}
+        if response.status_code != 200:
+            return f"LLM Error ({response.status_code}): {response.text}"
 
-    result = response.json()
-    return result["choices"][0]["message"]["content"]
+        result = response.json()
+
+        # Safe extraction
+        if "choices" in result and len(result["choices"]) > 0:
+            return result["choices"][0]["message"]["content"]
+
+        return "LLM response received but content missing."
+
+    except Exception as e:
+        return f"LLM request failed: {str(e)}"
