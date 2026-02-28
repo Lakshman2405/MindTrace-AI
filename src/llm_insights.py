@@ -48,16 +48,19 @@ Reflection & Growth Recommendations
 Ongoing Awareness Guidance
 """
 
+
+HF_ROUTER_URL = "https://router.huggingface.co/v1/chat/completions"
+
+
 def generate_llm_report(analysis_output):
 
-    # Always return a STRING. Never return dict.
-    if not OPENROUTER_API_KEY:
-        return "LLM report unavailable: OPENROUTER_API_KEY not configured."
+    if not HF_TOKEN:
+        return "LLM report unavailable: HF_TOKEN not configured."
 
     prompt = build_llm_prompt(analysis_output)
 
     headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Authorization": f"Bearer {HF_TOKEN}",
         "Content-Type": "application/json"
     }
 
@@ -68,27 +71,26 @@ def generate_llm_report(analysis_output):
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.15,
-        "max_tokens": 700
+        "max_tokens": 600
     }
 
     try:
         response = requests.post(
-            OPENROUTER_URL,
+            HF_ROUTER_URL,
             headers=headers,
             json=payload,
             timeout=60
         )
 
         if response.status_code != 200:
-            return f"LLM Error ({response.status_code}): {response.text}"
+            return f"HF Router Error ({response.status_code}): {response.text}"
 
         result = response.json()
 
-        # Safe extraction
         if "choices" in result and len(result["choices"]) > 0:
             return result["choices"][0]["message"]["content"]
 
-        return "LLM response received but content missing."
+        return "HF Router response received but content missing."
 
     except Exception as e:
-        return f"LLM request failed: {str(e)}"
+        return f"HF Router request failed: {str(e)}"
