@@ -19,12 +19,13 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.platypus import HRFlowable
 from io import BytesIO
 import sys
-# from src.pattern_analysis import #analyze_journal_entries
-#from src.llm_insights import #generate_llm_report
 
-from src.mindtrace-ai.src.pattern_analysis import analyze_journal_entries
+from src.pattern_analysis import analyze_journal_entries
+from src.llm_insights import generate_llm_report
 
-from src.mindtrace-ai.src.llm_insights import generate_llm_report
+#from src.mindtrace-ai.src.pattern_analysis #import analyze_journal_entries
+
+#from src.mindtrace-ai.src.llm_insights #import generate_llm_report
 
 
 # =========================================================
