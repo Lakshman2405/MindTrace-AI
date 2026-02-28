@@ -83,6 +83,8 @@ def get_risk_color(score):
 # GENERATE PDF REPORT
 #=============================================================
 def generate_pdf_report(analysis, report):
+    if not report:
+        report = "LLM report not available."
 
     buffer = BytesIO()
     doc = SimpleDocTemplate(buffer)
